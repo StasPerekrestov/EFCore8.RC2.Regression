@@ -5,7 +5,9 @@ Steps to reproduce
 1. `docker run --rm --name some-postgres -e POSTGRES_PASSWORD=secret -p 5432:5432 -d postgres`
 2. `cd ./RC2.CompiledQueries.Issue`
 3. `dotnet ef database update`
+4. `dotnet run`
 
+```csharp
 
 Result:
 Unhandled exception. System.InvalidOperationException: The compiled query '(ctx, id) => ctx.Users
@@ -24,3 +26,4 @@ Unhandled exception. System.InvalidOperationException: The compiled query '(ctx,
    at Program.<Main>$(String[] args) in ./develop/other/EF.RC2.CompiledQueries.Issue/RC2.CompiledQueries.Issue/Program.cs:line 14
    at Program.<Main>$(String[] args) in ./develop/other/EF.RC2.CompiledQueries.Issue/RC2.CompiledQueries.Issue/Program.cs:line 14
    at Program.<Main>(String[] args)
+```
